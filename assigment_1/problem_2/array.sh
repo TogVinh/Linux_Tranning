@@ -20,13 +20,13 @@ else
 				fi
 			done
 			
-			if [ $count == 0 ]; then
+			if [ $count == 1 ]; then
 				num_alone=$index
 				echo $num_alone
 				#exit
 			fi
 		done
-		echo $num_alone
+		#echo $num_alone
 	fi
  
 fi
