@@ -12,22 +12,21 @@ else
 	else
 		for index in ${array[@]}
 		do
-			index2=$((index+1))
 			count=0
-			while [ $index2 -lt $N ]
+			for index2 in ${array[@]}
 			do
 				if [ $index == $index2 ] ; then
-					$count=$((count+1))
+					count=$((count+1))
 				fi
 			done
 			
 			if [ $count == 0 ]; then
 				num_alone=$index
 				echo $num_alone
-				exit
+				#exit
 			fi
 		done
-	
+		echo $num_alone
 	fi
  
 fi

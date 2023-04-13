@@ -2,7 +2,7 @@
 
 read amount
 read -a index
-echo -${#index[@]}
+echo ${#index[@]}
 declare -i cum=0
 declare -i candidate=0
 

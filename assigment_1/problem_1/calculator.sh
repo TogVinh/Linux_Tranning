@@ -13,7 +13,7 @@ function add()
 function sub()
 {
 	#sub=`expr $num1 - $num2`
-	sub=`echo "scale=2;$num1 + $num2"|bc -l`
+	sub=`echo "scale=2;$num1 - $num2"|bc -l`
 	echo $sub
 }
 
