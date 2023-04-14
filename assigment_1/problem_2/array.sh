@@ -1,3 +1,5 @@
+#!/bin/bash
+
 read N
 declare -a array
 read -a array

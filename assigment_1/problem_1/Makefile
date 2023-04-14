@@ -1,5 +1,0 @@
-TARGET=run
-FILE=calculator.sh
-
-$(TARGET): $(FILE)
-	chmod u+x $(FILE)
