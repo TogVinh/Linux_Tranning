@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
     // in thong bao
     printf("Program name is: %s\n", argv[0]);
 
-    if (argc < 2)
+    if (argc < 3)
     {
         printf("No argument passed through command line.\n");
     }
@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
 
         strcpy(fileName,argv[1]);
-
+        strcpy(writeFile,argv[2]);
         pFile = fopen(fileName, "w+");
         if (pFile == NULL)
         {
@@ -30,10 +30,6 @@ int main(int argc, char *argv[])
             exit(1);
         }
 
-        // Input string to file
-        printf("Input your string : \n ")    ;
-        fflush(stdin);
-        fgets(writeFile, 255, stdin );
         // write to file
         fputs(writeFile, pFile);
         printf("write to file is done !!\n");

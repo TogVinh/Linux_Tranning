@@ -1,66 +1,17 @@
-#include <dirent.h>
-#include <stdio.h>
-#include <errno.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <string.h>
+#include<scanDir.h>
 
-#define strcut_newline(str) ((str)[strlen(str) - 1] == '\n') ? (str)[strlen(str) - 1] = '\0' : 0;
-#define MAX 255
 
-int main()
+int main( int argc, char *argv[] )
 {
-    DIR *dir;
-    struct dirent *entry;
-    char path[MAX] = {'0'};
-    fflush(stdin);
-    printf("nhap file path :  ");
-    fgets(path, MAX, stdin);
-    strcut_newline(path);
-
-    dir = opendir(path); // mo thu muc
-    char fullPath[MAX];
-
-    if (dir)
+    if (argc != 2)
     {
-        while ( (entry = readdir(dir)) != NULL )
-        {
-            /* code */
-                fullPath[0] = '\0';
-                strcat(fullPath, path);
-                strcat(fullPath, "/");
-                strcat(fullPath, entry->d_name);
-                printf("%s\n", fullPath);
-        }
-
-        closedir(dir);
+        printf("wrong input \n");
+        exit;
     }
-    else
-    {
-        printf("open Unsucessfully !!\n");
-    }
+    printf("---------------start scan---------------\n");
 
+    printDirectory(argv[1], 0);
+
+    printf("\n----------------Done------------------\n");
     return 0;
 }
-
-
-
-// int main()
-// {
-//     DIR *dir;
-//     struct dirent *entry;
-
-//     if ((dir = opendir("/home/kane/workspace/Linux_Tranning")) == NULL)
-//         perror("opendir() error");
-//     else
-//     {
-//         puts("contents of root:");
-//         while ((entry = readdir(dir)) != NULL)
-//         {
-            
-//             printf("%s\n", entry->d_name);
-//         }
-
-//         closedir(dir);
-//     }
-// }
