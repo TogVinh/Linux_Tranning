@@ -17,9 +17,6 @@ int main(int argc, char *argv[])
     }
     else
     {
-        //printf("path file is: %s\n", argv[1]);
-        //printf("path file is : %s\n",fileName);
-
 
         strcpy(fileName,argv[1]);
         strcpy(writeFile,argv[2]);
