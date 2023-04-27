@@ -10,8 +10,9 @@ int main()
 
 	while (1)
 	{
-		printf("%d \n", count);
+		printf(" %d", count);
 		count++;
+		fflush(stdout);
 		sleep(1);
 	}
 
