@@ -1,4 +1,5 @@
 #include "my_Malloc.h"
+
 int main()
 {
     int *ptr = (int *)myMalloc(100 * sizeof(int));
@@ -7,5 +8,5 @@ int main()
         printf("Success\n");
     }
     myFree(ptr);
-    
+
 }
